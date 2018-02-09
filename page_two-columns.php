@@ -4,6 +4,7 @@
     */
 ?>
 <?php get_header(); ?>
+<main class="content">
 <div class="container">
     <article>
  
@@ -36,4 +37,5 @@
  
     </article>
  </div>
+</main>
 <?php get_footer(); ?>
