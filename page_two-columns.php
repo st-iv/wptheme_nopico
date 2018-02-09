@@ -5,37 +5,54 @@
 ?>
 <?php get_header(); ?>
 <main class="content">
-<div class="container">
-    <article>
+<div class="container articles">
+    
  
         <?php // Display blog posts on any page @ http://m0n.co/l
         $temp = $wp_query; $wp_query= null;
-        $wp_query = new WP_Query(); $wp_query->query('showposts=5' . '&paged='.$paged);
+        $wp_query = new WP_Query(); $wp_query->query('showposts=2' . '&paged='.$paged);
         while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
- 
-        <h2><a href="<?php the_permalink(); ?>" title="Read more"><?php the_title(); ?></a></h2>
-        <?php the_excerpt(); ?>
- 
+ <article class="article">
+        <h2 class="article__title">
+            <a href="<?php the_permalink(); ?>" title="Подробнее ...">
+                <?php the_title(); ?>
+            </a>
+        </h2>
+        <span class="article__date">
+            <?php the_date('d.m.Y') ?>
+        </span>
+        <div class="col-sm-12">
+          <?php the_post_thumbnail('full', 'class=article__img'); ?>
+          </div>
+        <div class="col-sm-12">
+            <?php the_excerpt(); ?>
+        </div>
+  </article>
         <?php endwhile; ?>
- 
+
         <?php if ($paged > 1) { ?>
  
-        <nav id="nav-posts">
-            <div class="prev"><?php next_posts_link('&laquo; Previous Posts'); ?></div>
-            <div class="next"><?php previous_posts_link('Newer Posts &raquo;'); ?></div>
-        </nav>
+        <div id="nav-posts">
+            <div class="post__prev"><?php previous_posts_link('< Назад'); ?></div>
+            <div class="post__next">
+                <?php next_posts_link('Далее >'); ?>
+                </div>
+        </div>
  
         <?php } else { ?>
  
-        <nav id="nav-posts">
-            <div class="prev"><?php next_posts_link('&laquo; Previous Posts'); ?></div>
-        </nav>
+        <div id="nav-posts">
+            <div class="post__next"><?php next_posts_link('Далее >'); ?></div>
+        </div>
  
         <?php } ?>
  
         <?php wp_reset_postdata(); ?>
  
-    </article>
+    
  </div>
+<!--    <div class="col-sm-12">
+  <?php wp_pagination()?>
+  </div> -->
 </main>
 <?php get_footer(); ?>

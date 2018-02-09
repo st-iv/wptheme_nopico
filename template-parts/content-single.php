@@ -11,14 +11,14 @@
 
 <!-- copy -->
 <!-- post -->
-<article id="post-<?php the_ID ?>" class="article">
+<article id="post-<?php the_ID ?>" class="">
   <h3 class="article__title">
     <?php the_title(); ?>
   <span class="article__date">
     <?php the_date('d.m.Y') ?>
   </span>
   </h3>
-  <?php the_post_thumbnail('full', 'class=article__img'); ?>
+  <!-- <?php the_post_thumbnail('full', 'class=article__img'); ?> -->
   <div class="col-sm-12">
     <?php the_content(); ?>
   </div>
