@@ -55,7 +55,81 @@ add_action('wp_enqueue_scripts', 'style_script_load');
 // header menu
 register_nav_menu( 'menu', 'Меню в шапке' );
 
-// edit text
+//** РЕДАКТИРОВАТЬ ТЕКСТ В ХЕДЕРЕ**
+
+add_action('customize_register', 'header_customize_register');
+
+function header_customize_register($wp_customize) {
+    $wp_customize->add_section('header', array(
+        'title' => 'Шапка сайта'
+    ));
+    // Описание сайта
+    $setting_desc = 'header__desc';
+    $wp_customize->add_setting($setting_desc, array(
+        'default' => 'Производство сувенирной и наградной продукции из металла с доставкой по всей России',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control($setting_desc, array(
+        'section' => 'header',
+        'type' => 'textarea',
+        'label' => 'Описание сайта',
+    ));
+
+    // Email
+    $setting_mail = 'header__mail';
+    $wp_customize->add_setting($setting_mail, array(
+        'default' => 'zakaz@нопико.рф',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control($setting_mail, array(
+        'section' => 'header',
+        'type' => 'textarea',
+        'label' => 'Email',
+    ));    
+
+    // Телефон
+    $setting_phone = 'header__phone';
+    $wp_customize->add_setting($setting_phone, array(
+        'default' => '+7 (3952) 92-02-33',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control($setting_phone, array(
+        'section' => 'header',
+        'type' => 'textarea',
+        'label' => 'Телефон',
+    ));      
+
+    // Обновление изменений без перезагрузки
+    $wp_customize->selective_refresh->add_partial($setting_desc, array(
+        'selector' => '.site-info', //должен содержать class или id элемента с текстом в подвале
+        'render_callback' => function() use ($setting_desc) {
+            return nl2br(esc_html(get_theme_mod($setting_desc)));
+        }   
+    ));
+
+    $wp_customize->selective_refresh->add_partial($setting_mail, array(
+        'selector' => '.site-info',
+        'render_callback' => function() use ($setting_mail) {
+            return nl2br(esc_html(get_theme_mod($setting_mail)));
+        } 
+    ));
+
+    $wp_customize->selective_refresh->add_partial($setting_phone, array(
+        'selector' => '.site-info',
+        'render_callback' => function() use ($setting_phone) {
+            return nl2br(esc_html(get_theme_mod($setting_phone)));
+        } 
+    ));    
+}
+
+
+// редактировать текст в футере
 
 add_action('customize_register', 'dco_customize_register');
 

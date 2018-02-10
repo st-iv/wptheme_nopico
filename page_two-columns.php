@@ -6,12 +6,14 @@
 <?php get_header(); ?>
 <main class="content">
 <div class="container articles">
-    
- 
-        <?php // Display blog posts on any page @ http://m0n.co/l
+<!-- показ постов -->
+        <?php
         $temp = $wp_query; $wp_query= null;
-        $wp_query = new WP_Query(); $wp_query->query('showposts=2' . '&paged='.$paged);
+        // изенить количество постов на странице
+        $wp_query = new WP_Query(); $wp_query->query('showposts=10' . '&paged='.$paged);
         while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+
+
  <article class="article">
         <h2 class="article__title">
             <a href="<?php the_permalink(); ?>" title="Подробнее ...">
@@ -28,6 +30,8 @@
             <?php the_excerpt(); ?>
         </div>
   </article>
+
+  
         <?php endwhile; ?>
 
         <?php if ($paged > 1) { ?>

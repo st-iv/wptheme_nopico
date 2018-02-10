@@ -20,28 +20,32 @@
       
       <div class="container header__top">
         <div class="row align-items-center">
-          <div class="col-sm-12 col-md block-center">
-            <a href="<?php echo home_url() ?>">
-              <?php the_custom_logo(); ?>
-              <span>
-                manufacturing
-              </span>
+          <div class="col-sm-12 col-md block-left">
+            <div class="logo__wrap">
+              <a href="<?php echo home_url() ?>">
+                <?php the_custom_logo(); ?>
+                <span>
+                  manufacturing
+                </span>
+              </div>
             </a>
           </div>
           <div class="col-sm-12 col-md">
             <p class="header__desc">
-              Производство сувенирной и наградной продукции из металла с доставкой по всей России
+              <!-- Производство сувенирной и наградной продукции из металла с доставкой по всей России -->
+              <?php echo nl2br(esc_html(get_theme_mod('header__desc')));?>
             </p>
           </div>
           <div class="col-sm-12 col-md text-right">
             <a href="#" class="header__mail">
-              zakaz@нопико.рф
+              <!-- zakaz@нопико.рф -->
+              <?php echo nl2br(esc_html(get_theme_mod('header__mail')));?>
             </a>
           </div>
           <div class="col-sm-12 col-md">
             <div class="header__callback">
-              <a class="header__phone" href="+7 (3952) 92-02-33">
-                +7 (3952) 92-02-33
+              <a class="header__phone" href="tel:<?php echo nl2br(esc_html(get_theme_mod('header__phone')));?>">
+                <?php echo nl2br(esc_html(get_theme_mod('header__phone')));?>
               </a>
               <a href="#popup" class="call-back-btn popup__link">
                 Заказать обратный звонок
