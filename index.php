@@ -28,7 +28,10 @@
         </div>
       </div>
       <div class="col-sm-12 block-center">
-        <a href="#about" class="icon-down block__center"></a>
+<!-- <a class="send_btn" href="javascript://0" onclick="slowScroll ('#contact-form')">
+            Оставить заявку
+          </a> -->
+        <a class="icon-down block__center" href="javascript://0" onclick="slowScroll ('#about')"></a>
       </div>
     </div>
   </div>
@@ -52,7 +55,7 @@
       <!-- contact forms -->
       <?php echo do_shortcode('[contact-form-7 id="185" title="Расчет заказа"]'); ?>
   </div>
-  <div id="#about" class="about">
+  <div id="about" class="about">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
