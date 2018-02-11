@@ -1,26 +1,5 @@
 <?php get_header() ?>
 <main>
-<!--   <div class="pagination">
-    <ul class="pagination__list">
-      <li class="pagination__item">
-        <span class="pagination__link pagination__link--active">
-          1
-        </span>
-      </li>
-      <li class="pagination__item">
-        <a href="" class="pagination__link">
-          2
-        </a>
-      </li>
-      <li class="pagination__item">
-        <a href="" class="pagination__link">
-          3
-        </a>
-      </li>
-
-    </ul>
-  </div> -->  
-</div>
   <div class="container">
     <div class="row">
       <div class="col banner__info">
@@ -54,7 +33,7 @@
     </div>
   </div>
   <div id="popup__calc" class="mfp-hide popup__contact">
-    <form id="contactForm" name="sentMessage" novalidate>
+<!--     <form id="contactForm" name="sentMessage" novalidate>
       <div class="row">
         <div class="col-sm-12 text-center">
           <input class="contact-form__input" type="text" placeholder="Имя *" required>
@@ -69,7 +48,9 @@
           <input class="send_btn" type="submit" value="рассчитать">
         </div>
       </div>
-    </form>
+    </form> -->
+      <!-- contact forms -->
+      <?php echo do_shortcode('[contact-form-7 id="185" title="Расчет заказа"]'); ?>
   </div>
   <div id="#about" class="about">
     <div class="container">
@@ -539,7 +520,9 @@
   </div>
 </div>
 <div class="contact-form" id="contact-form">
-  <div class="container">
+  <?php echo do_shortcode('[contact-form-7 id="188" title="Основная контактная форма"]'); ?>
+  
+<!--   <div class="container">
     <div class="row">
       
       <div class="col-sm-12">
@@ -587,7 +570,7 @@
         </div>
       </form>
     </div>
-  </div>
+  </div> -->
 </div>
       <div class="footer__contacts">
             <div class="container">

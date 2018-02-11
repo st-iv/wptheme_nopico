@@ -16,8 +16,7 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <header>
-      
+    <header>   
       <div class="container header__top">
         <div class="row align-items-center">
           <div class="col-sm-12 col-md block-left">
@@ -55,7 +54,8 @@
         </div>
       </div>
       <div id="popup" class="mfp-hide popup__contact">
-        <form id="contactForm" name="sentMessage" novalidate>
+        <?php echo do_shortcode('[contact-form-7 id="191" title="Обратный звонок"]'); ?>
+<!--         <form id="contactForm" name="sentMessage" novalidate>
           <div class="row">
             <div class="col-sm-12 text-center">
               <input class="contact-form__input" type="text" placeholder="Имя *" required>
@@ -67,7 +67,7 @@
               <input class="send_btn" type="submit" value="позвонить мне">
             </div>
           </div>
-        </form>
+        </form> -->
       </div>
       <a href="#" class="nav__link menu-trigger">
         <span>
