@@ -43,9 +43,9 @@ function wptheme_setup() {
 add_action('after_setup_theme', 'wptheme_setup');
 
 function style_script_load() {
-	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js');
-	wp_enqueue_style( 'style', get_stylesheet_uri());
-	wp_enqueue_style( 'sprite', get_template_directory_uri() . '/icons/sprite.css');
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js');
+    wp_enqueue_style( 'style', get_stylesheet_uri());
+    wp_enqueue_style( 'sprite', get_template_directory_uri() . '/icons/sprite.css');
 }
 
 add_action('wp_enqueue_scripts', 'style_script_load');
