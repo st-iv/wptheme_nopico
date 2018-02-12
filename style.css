@@ -3371,7 +3371,7 @@
        justify-content: space-between;
        list-style: none;
        max-width: 1000px;
-       margin: 15px auto
+       margin: 0 auto;
    }
     @media(min-width: 769px) {
           .nav__list li {
@@ -3389,7 +3389,7 @@
         display: -ms-flex;
         display: -o-flex;
         display: flex;
-       padding: 10px 48px
+       padding: 10px 40px
    }
 
    .nav__list li a:hover,
@@ -3398,6 +3398,22 @@
    }
 
    @media (max-width:1000px) {
+        .logo__wrap {
+          margin: auto;
+        }
+        
+        .call-back-btn {
+          margin-bottom: 15px;
+        }
+
+        .header__menu {
+            width: 100%;
+        }
+        
+        .menu-item-has-children a:after {
+          content: "" !important;
+        }
+
        .menu-trigger {
            display: -webkit-box;
            display: -ms-flexbox;
@@ -3409,15 +3425,18 @@
            -ms-flex-align: center;
            align-items: center;
            width: 100%;
-           background: #d8b14a
+           background: #d8b14a;
+           text-transform: uppercase;
+           text-decoration: none;
        }
+
        .nav__list,
        .sticky {
            background: #e1c374
        }
        .menu-trigger span {
            color: #fff;
-           font-weight: 600;
+           font-weight: 700;
            padding: 0 22px
        }
        .nav__list {
@@ -3427,21 +3446,27 @@
            -webkit-box-orient: vertical;
            -webkit-box-direction: normal;
            -ms-flex-direction: column;
-           flex-direction: column
+           flex-direction: column;
+           color: #fff;
        }
        .nav__list li {
            display: -webkit-box;
            display: -ms-flexbox;
-           display: flex;
+           display: block;
            width: 100%;
            text-align: center
        }
        .nav__list li a {
            color: #fff;
            font-weight: 600;
-           padding: 15px 0;
+           padding: 15px 30px;
            width: 100%;
            border-bottom: 1px solid #d8b14a
+       }
+
+       .sub-menu {
+        display: block !important;
+        position: inherit !important;
        }
    }
 
@@ -4125,7 +4150,7 @@
    .sub-menu {
        display: none;
        position: absolute;
-       background-color: #f1f1f1;
+       background-color: #c1c0c0;
        min-width: 160px;
        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
        z-index: 1;

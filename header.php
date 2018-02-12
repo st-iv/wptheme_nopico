@@ -69,6 +69,7 @@
           </div>
         </form> -->
       </div>
+      <nav class="header__menu">
       <a href="#" class="nav__link menu-trigger">
         <span>
           Меню
@@ -76,6 +77,7 @@
         <span class="icon-burger"></span>
       </a>
       <?php wp_nav_menu(array('theme_location'=>'menu', 'menu_class'=>'nav__list', 'container'=>'false') ); ?>
+      </nav>
       <!--       <nav>
         <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="#">О компании</a></li>
