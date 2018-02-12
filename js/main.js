@@ -914,18 +914,13 @@ $(function() {
     });
 });
 
-//  $(function(){
-//   $('.menu-item-has-children a').hover(function(){
-//     $(this).next('.sub-menu').slideDown();
-//    },
-//    function(){
-//     $(this).next('.sub-menu').slideUp();
-//    });
-//        $(".sub-menu li").hover(function () {
-//      $(this).children("ul").slideDown('medium');
-//   },
-//   function () {
-//     $(this).children("ul").slideUp('medium');
-//   }
-// );
-//  });
+// $(document).ready(function(){
+//     $( ".sub-menu li a").hover(
+//       function() {
+//         $( this ).prev(".sub-menu").css("background":"orange");
+//       }, 
+//       function() {
+//         $( this ).prev(".sub-menu").css("background":"green");
+//       }
+//     );
+// });
